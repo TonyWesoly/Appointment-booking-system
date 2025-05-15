@@ -1,24 +1,61 @@
-# Compiled class file
-*.class
-
-# Log file
+# ----------------------------------
+# Sekcja ogólna (niezależna od technologii)
+# ----------------------------------
+.DS_Store
+Thumbs.db
 *.log
+*.swp
+*.bak
+~*
+*.tmp
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
+# ----------------------------------
+# Java
+# ----------------------------------
+# Pliki skompilowane
+*.class
 *.war
-*.nar
+*.jar
 *.ear
-*.zip
-*.tar.gz
-*.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Katalogi budowania
+target/   # Maven
+build/    # Gradle
+out/      # IntelliJ
+bin/      # Czasami używane przez IDE
+
+# Logi i crash dumpy JVM
 hs_err_pid*
-replay_pid*
+logs/
+
+# Konfiguracje IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.factorypath
+.vscode/
+
+# ----------------------------------
+# Docker
+# ----------------------------------
+# Lokalne override'y docker-compose
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Środowiskowe zmienne (mogą zawierać sekrety)
+.env
+.env.*
+!.env.example
+
+# Dane i wolumeny kontenerów
+data/
+volumes/
+**/mysql_data/
+**/postgres_data/
+
+# Inne artefakty Dockera
+docker-compose*.log
