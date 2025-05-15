@@ -1,5 +1,5 @@
 # ----------------------------------
-# Sekcja ogólna (niezależna od technologii)
+# General Section (Technology Agnostic)
 # ----------------------------------
 .DS_Store
 Thumbs.db
@@ -10,52 +10,62 @@ Thumbs.db
 *.tmp
 
 # ----------------------------------
-# Java
-# ----------------------------------
-# Pliki skompilowane
-*.class
-*.war
-*.jar
-*.ear
-
-# Katalogi budowania
-target/   # Maven
-build/    # Gradle
-out/      # IntelliJ
-bin/      # Czasami używane przez IDE
-
-# Logi i crash dumpy JVM
-hs_err_pid*
-logs/
-
-# Konfiguracje IDE
-.idea/
-*.iml
-*.ipr
-*.iws
-.classpath
-.project
-.settings/
-.factorypath
-.vscode/
-
-# ----------------------------------
 # Docker
 # ----------------------------------
-# Lokalne override'y docker-compose
+# Local Overrides docker-compose
 docker-compose.override.yml
 docker-compose.local.yml
 
-# Środowiskowe zmienne (mogą zawierać sekrety)
+# Environment variables (may contain secrets)
 .env
 .env.*
 !.env.example
 
-# Dane i wolumeny kontenerów
+# Container data and volumes
 data/
 volumes/
 **/mysql_data/
 **/postgres_data/
 
-# Inne artefakty Dockera
+# Other Docker artifacts
 docker-compose*.log
+
+### spring
+
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
